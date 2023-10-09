@@ -11,19 +11,35 @@
   /* ... y así sucesivamente para las demás variables de colores */
 }
 
-/* ---------------------------------------------------------------------- */
+/* ------------------------------------------ ESTILOS PERSONALIZADOS (index) ----------------------------------------------------- */
 
 #encabezado {
   background: linear-gradient(8deg, var(--primary), var(--lightbody));
+  z-index: 2;
+  box-shadow: 0 0 15px #000 ;
 }
 
 .tituloEncabezado {
   color: var(--white);
 }
 
+.carousel-item {
+  z-index: -1;
+}
+
 #tarjetasDetalles {
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
+  background: linear-gradient(8deg, var(--primary), var(--lightbody));
   margin: 5rem 8rem;
+}
+
+.bloque-negro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .circular-image {
@@ -34,7 +50,27 @@
   margin: 10px 20px 10px 0; /* Márgenes para separar el texto de la imagen */
 }
 
-/* ---------------------------------------------------------------------- */
+/* ---------------------------------------------- ESTILOS PERSONALIZADOS (productos) ----------------------------------------------- */
+
+.marco-disponible {
+  border: 1rem solid transparent;
+  background: linear-gradient(white, white),
+  url(/img/back_1_clip.jpg);
+  background-clip: padding-box, border-box;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+.marco-no-disponible {
+  border: 1rem solid transparent;
+  background: linear-gradient(white, white),
+  url(/img/back_0_clip.jpg);
+  background-clip: padding-box, border-box;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+/* ----------------------------------------------- ESTILOS INCLUIDOS DE BOOTSTRAP --------------------------------------------------- */
 
 .nav-link {
   color: var(--primary) !important;
@@ -112,7 +148,7 @@
   z-index: 1500 !important;
 }
 
-/* Estilos para la sombra con degradado */
+/* ----- Estilos para la sombra con degradado ------ */
 
 .text-shadow {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
@@ -139,7 +175,7 @@
   pointer-events: none;
 }
 
-/* ---------------------------------------------------------------------- */
+/* ------------------------------------------------- */
 
 /* GLOBAL STYLES
 /* Padding below the footer and lighter body text */
