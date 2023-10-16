@@ -14,7 +14,7 @@
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 4rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* ------------------------- */
@@ -101,6 +101,25 @@ body {
   background-color: var(--primary) !important;
 }
 
+.navegador .boton-navegador-carrito {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding: var(--bs-nav-link-padding-y) 12px;
+  margin: 0 10px;
+}
+
+.navegador .boton-navegador-carrito:hover {
+  background-color: var(--white);
+  color: var(--primary);
+  transition: 0.3s;
+}
+
 #myCarousel {
   margin-bottom: 4rem;
 }
@@ -110,7 +129,7 @@ body {
   height: 32rem;
 }
 
-.carousel-item .bloque-negro {
+.carousel-item .capa-oscura {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -144,7 +163,7 @@ body {
 
 #contenedor-tarjetas {
   background: linear-gradient(8deg, var(--primary), var(--lightbody));
-  margin: 5rem 1rem;
+  margin: 0 1rem;
   width: auto;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -171,30 +190,37 @@ body {
 .tarjeta-detalle {
   border: none;
   border-radius: 1rem;
-  background-color: #fff;
-  color: #212529;
+  background-color: var(--white);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-image: url(img/feature_suavidad.jpg);
+  user-select: none;
 }
 
-.tarjeta-detalle .textoDetalle {
-  margin-bottom: -80%;
+.tarjeta-detalle .texto-detalle {
+  position: relative;
+  bottom: -20rem;
+  padding: 3rem!important;
 }
 
-.tarjeta-detalle:hover .textoDetalle {
-  
+.tarjeta-detalle .texto-detalle > p {
+  margin-top: 35px;
+  font-size: 1.20rem !important;  
+  text-align: center;
 }
 
-.circular-image {
-  border-radius: 40%; /* Hace que la imagen sea circular */
-  width: 150px; /* Ancho de la imagen */
-  height: 150px; /* Altura de la imagen */
-  float: left; /* Hace que la imagen se alinee a la izquierda */
-  margin: 10px 20px 10px 0; /* Márgenes para separar el texto de la imagen */
+.tarjeta-detalle:hover .texto-detalle {
+  position: relative;
+  bottom: -2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  transition: 2s;
+}
+
+.info-texto {
+  user-select: none;
 }
 
 .navegador-footer {
@@ -258,6 +284,43 @@ body {
   background-clip: padding-box, border-box;
   background-size: cover;
   background-origin: border-box;
+}
+
+.boton-producto {
+  background-color: var(--terciary);
+  color: var(--primary);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+}
+
+.boton-producto:hover {
+  background-color: darkred;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.boton-producto-ver {
+  margin: 20.5rem 4.75rem;
+  padding: 12px 30px;
+}
+
+.boton-producto-carrito {
+  margin: 20.5rem 14.5rem;
+  padding: 12px 15px;
+}
+
+.boton-no-disponible {
+  background-color: #6c757d;
+  color: var(--white);
+}
+
+.boton-no-disponible:hover {
+  background-color: #53575a;
 }
 
 /* RESPONSIVE CSS
