@@ -6,7 +6,13 @@
     <title>Productos · CrezcoSiendo</title>
     <link rel="website icon" type="png" href="img/logo_marca.png">
     <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 
@@ -19,6 +25,8 @@
 <body>
     <div class="">
 
+        <!-- =========================== ENCABEZADO =========================== -->
+
         <header id="encabezado">
             <a href="/" class="encabezado-marca">
                 <img src="/img/logo_marca.png" alt="Logo Crezcosiendo">
@@ -28,19 +36,20 @@
                 <li class="navegador-item"><a href="index.html" class="navegador-link">Inicio</a></li>
                 <li class="navegador-item"><a href="#" class="navegador-link active" aria-current="page">Productos</a></li>
                 <li class="navegador-item"><a href="contact.html" class="navegador-link">Contacto</a></li>
+                <button class="boton-navegador-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
             </ul>
         </header>
 
+        <!-- =========================== PRODUCTOS =========================== -->
+
         <main class="px-5 mx-5 my-4">
             <div id="producto-item" class="row justify-content-end mx-0 pt-5 featurette">
-                <div class="col-md-8 px-5">
-                    <h2 class="featurette-heading fw-normal lh-1 mt-2">Kit Set completo de baño</h2>
-                    <p class="lead pe-5">
-                        El <b>"Kit Set de Baño"</b> incluye una <b>toalla suave de mano</b>, 
-                        <b>pads quita maquillaje reutilizables</b>, <b>vincha para cabello</b> y <b>turbante absorbente</b>.<br> 
-                        Experimenta comodidad y funcionalidad en cada paso de tu rutina de cuidado personal. 
-                        Un conjunto diseñado para mejorar tu experiencia despues de un baño.
-                    </p>
+                <div class="col-md-8 px-5" style="line-height: 1.2;">
+                    <h2 class="featurette-heading fw-normal lh-1 my-3">Kit Set completo de baño</h2>
+                        <p class="lead">El kit Set de Baño incluye una toalla suave de mano, 
+                            pads quita maquillaje reutilizables, vincha para cabello y turbante absorbente.</p>
+                        <p class="lead pe-5">Experimenta comodidad y funcionalidad en cada paso de tu rutina de cuidado personal. 
+                            Un conjunto diseñado para mejorar tu experiencia despues de un baño.</p>
                     <ul class="fw-bold fs-5" style="list-style-type: circle;">
                         <li>Turbante para cabello</li>
                         <li>Toalla de mano</li>
@@ -49,6 +58,8 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
+                    <a href="product-detail-1.html"><button class="boton-producto boton-producto-ver"><i class="fa-solid fa-circle-info"></i> Detalles</button></a>
+                    <button class="boton-producto boton-producto-carrito"><i class="fa-solid fa-cart-plus"></i></button>
                     <img src="img/product_set.jpg" class="marco-disponible 
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
@@ -58,22 +69,29 @@
             <hr class="featurette-divider">
 
             <div id="producto-item" class="row mx-0 featurette">
-                <div class="col-md-8 px-5 order-md-2">
-                    <h2 class="featurette-heading fw-normal lh-1 mt-2">Batas de toalla para baño</h2>
+                <div class="col-md-8 px-5 order-md-2" style="line-height: 1.2;">
+                    <h2 class="featurette-heading fw-normal lh-1 my-3">Batas de toalla para baño</h2>
                     <p class="lead">
-                        <b>Absorción superior</b>: La bata de baño está hecha de materiales altamente 
+                        <span style="text-decoration: underline;">Absorción superior</span>: 
+                        La bata de baño está hecha de materiales altamente 
                         absorbentes que te ayudarán a secarte rápidamente después de bañarte.
-                        <br>
-                        <b>Comodidad en el diseño</b>: Su diseño espacioso y corte relajado brindan 
+                    </p>
+                    <p class="lead">
+                        <span style="text-decoration: underline;">Comodidad en el diseño</span>: 
+                        Su diseño espacioso y corte relajado brindan 
                         una sensación de comodidad y libertad de movimiento.
-                        <br>
-                        <b>Durabilidad</b>: Utilizamos materiales de alta calidad para garantizar 
+                    </p>
+                    <p class="lead">
+                        <span style="text-decoration: underline;">Durabilidad</span>: 
+                        Utilizamos materiales de alta calidad para garantizar 
                         que nuestras batas sean duraderas y resistan el desgaste constante. 
                         Puedes confiar en la calidad y la resistencia de nuestras batas para 
                         que te acompañen durante mucho tiempo.
                     </p>
                 </div>
                 <div class="col-md-4 order-md-1">
+                    <button class="boton-producto boton-producto-ver"><i class="fa-solid fa-circle-info"></i> Detalles</button>
+                    <button class="boton-producto boton-producto-carrito"><i class="fa-solid fa-cart-plus"></i></button>
                     <img src="img/product_bata.jpg" class="marco-disponible
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -84,18 +102,24 @@
             <hr class="featurette-divider">
 
             <div id="producto-item" class="row justify-content-end mx-0 pb-5 featurette">
-                <div class="col-md-8 px-5">
-                    <h2 class="featurette-heading fw-normal lh-1 mt-2 text-secondary">Fundas de almohada (Proximamente)</h2>
+                <div class="col-md-8 px-5" style="line-height: 1.2;">
+                    <h2 class="featurette-heading fw-normal lh-1 mt-3 text-secondary">Fundas de almohada</h2>
+                    <h3 class="fw-normal lh-1 mb-3 text-secondary">(No disponible)</h3>
                     <p class="lead text-secondary">
-                        <b>Compatibilidad rizado</b>: Recomendada especialmente para cabello rizado y ondulado, 
+                        <span style="text-decoration: underline;">Compatibilidad rizado</span>: 
+                        Recomendada especialmente para cabello rizado y ondulado, 
                         estas fundas son la respuesta al frizz no deseado. Ayudan a que tus rizos mantengan su forma 
                         y evitan el envejecimiento prematuro de tu cabello, preservando la integridad de tu peinado mientras se seca.
-                        <br>
-                        <b>Protección nocturna</b>: Nuestra funda de almohada está cuidadosamente diseñada para proteger 
+                    </p>
+                    <p class="lead text-secondary">
+                        <span style="text-decoration: underline;">Protección nocturna</span>: 
+                        Nuestra funda de almohada está cuidadosamente diseñada para proteger 
                         tanto tu cabello como tu almohada mientras disfrutas de un sueño reparador con el cabello mojado.
                     </p>
                 </div>
                 <div class="col-md-4">
+                    <button class="boton-producto boton-producto-ver boton-no-disponible"><i class="fa-solid fa-circle-info"></i> Detalles</button>
+                    <button class="boton-producto boton-producto-carrito boton-no-disponible"><i class="fa-solid fa-cart-plus"></i></button>
                     <img src="img/product_almohada.jpg" class="marco-no-disponible
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -103,6 +127,8 @@
                 </div>
             </div>
         </main>
+
+        <!-- =========================== PIE DE PAGINA =========================== -->
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary" id="copy"></p>
