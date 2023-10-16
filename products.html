@@ -7,23 +7,32 @@
     <link rel="website icon" type="png" href="img/logo_marca.png">
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Autour+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="">
-        <header id="encabezado" class="d-flex flex-wrap justify-content-center py-3">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
-                <span class="tituloEncabezado fs-3 fw-semibold">CREZCOSIENDO</span>
+
+        <header id="encabezado">
+            <a href="/" class="encabezado-marca">
+                <img src="/img/logo_marca.png" alt="Logo Crezcosiendo">
+                <span class="encabezado-titulo">CREZCOSIENDO</span>
             </a>
-            <ul class="nav nav-pills my-auto me-3">
-                <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link active">Productos</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+            <ul class="navegador">
+                <li class="navegador-item"><a href="index.html" class="navegador-link">Inicio</a></li>
+                <li class="navegador-item"><a href="#" class="navegador-link active" aria-current="page">Productos</a></li>
+                <li class="navegador-item"><a href="contact.html" class="navegador-link">Contacto</a></li>
             </ul>
         </header>
 
         <main class="px-5 mx-5 my-4">
-            <div class="row justify-content-end mx-0 pt-5 featurette">
+            <div id="producto-item" class="row justify-content-end mx-0 pt-5 featurette">
                 <div class="col-md-8 px-5">
                     <h2 class="featurette-heading fw-normal lh-1 mt-2">Kit Set completo de baño</h2>
                     <p class="lead pe-5">
@@ -32,7 +41,7 @@
                         Experimenta comodidad y funcionalidad en cada paso de tu rutina de cuidado personal. 
                         Un conjunto diseñado para mejorar tu experiencia despues de un baño.
                     </p>
-                    <ul class="fw-bold" style="list-style-type: circle;">
+                    <ul class="fw-bold fs-5" style="list-style-type: circle;">
                         <li>Turbante para cabello</li>
                         <li>Toalla de mano</li>
                         <li>Pads quita maquillaje</li>
@@ -40,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <img src="img/product_set.jpg" class="marco-disponible bd-placeholder-img bd-placeholder-img-lg 
+                    <img src="img/product_set.jpg" class="marco-disponible 
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
                 </div>
@@ -48,7 +57,7 @@
 
             <hr class="featurette-divider">
 
-            <div class="row mx-0 featurette">
+            <div id="producto-item" class="row mx-0 featurette">
                 <div class="col-md-8 px-5 order-md-2">
                     <h2 class="featurette-heading fw-normal lh-1 mt-2">Batas de toalla para baño</h2>
                     <p class="lead">
@@ -65,7 +74,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 order-md-1">
-                    <img src="img/product_bata.jpg" class="marco-disponible bd-placeholder-img bd-placeholder-img-lg 
+                    <img src="img/product_bata.jpg" class="marco-disponible
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
                     </img>
@@ -74,7 +83,7 @@
 
             <hr class="featurette-divider">
 
-            <div class="row justify-content-end mx-0 pb-5 featurette">
+            <div id="producto-item" class="row justify-content-end mx-0 pb-5 featurette">
                 <div class="col-md-8 px-5">
                     <h2 class="featurette-heading fw-normal lh-1 mt-2 text-secondary">Fundas de almohada (Proximamente)</h2>
                     <p class="lead text-secondary">
@@ -87,7 +96,7 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="img/product_almohada.jpg" class="marco-no-disponible bd-placeholder-img bd-placeholder-img-lg 
+                    <img src="img/product_almohada.jpg" class="marco-no-disponible
                     featurette-image img-fluid mx-auto" width="500" height="500" 
                     role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
                     </img>
@@ -98,10 +107,10 @@
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary" id="copy"></p>
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Inicio</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link px-2 text-body-secondary">Productos</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-body-secondary">Contacto</a></li>
+            <ul class="navegador-footer col-md-4 justify-content-end">
+                <li class="navegador-item"><a href="index.html" class="navegador-link px-2">Inicio</a></li>
+                <li class="navegador-item"><a href="#" class="navegador-link active px-2">Productos</a></li>
+                <li class="navegador-item"><a href="contact.html" class="navegador-link px-2">Contacto</a></li>
                 <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
             </ul>
         </footer>

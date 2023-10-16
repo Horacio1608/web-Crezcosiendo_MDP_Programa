@@ -1,45 +1,192 @@
 :root {
-  --primary: rgb(235,53,102) !important; /* Cambia el color principal */
-  --secondary: rgb(244,114,100);/* Cambia el color secundario */
+  --primary: rgb(235,53,102) !important;
+  --secondary: rgb(244,114,100);
   --terciary: rgb(251,184,43);
   --lightbody: rgb(255,245,158);
   --lightbodyOp: rgba(255,245,158,0.5);
   --backbody: rgb(255,172,50);
-  --success: #28a745; /* Cambia el color de éxito */
+  --success: #28a745;
   --undergray: #6c757d;
   --white: #fff;
-  /* ... y así sucesivamente para las demás variables de colores */
+}
+
+/* Linea divisora
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* ------------------------- */
+
+* {
+  /* font-family: 'Rubik', sans-serif; */
+  /* font-family: 'PT Sans', sans-serif; */
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  /* padding-top: 3rem; */
+  /* padding-bottom: 3rem; */
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+
+.tituloEncabezado, h1, h2, h3 {
+  font-family: 'Comfortaa', sans-serif;
 }
 
 /* ------------------------------------------ ESTILOS PERSONALIZADOS (index) ----------------------------------------------------- */
 
 #encabezado {
   background: linear-gradient(8deg, var(--primary), var(--lightbody));
+  box-shadow: 0 0 15px #000;
   z-index: 2;
-  box-shadow: 0 0 15px #000 ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.tituloEncabezado {
+#encabezado .encabezado-marca {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* El valor puede variar según tus necesidades en pantalla md */
+  text-decoration: none;
+}
+
+#encabezado .encabezado-marca img {
+  height: 3rem;
+  margin: 0 1rem;
+}
+
+#encabezado .encabezado-marca .encabezado-titulo {
+  /* font-family: 'Autour One', sans-serif; */
   color: var(--white);
+  font-weight: 600 !important;
+  font-size: calc(1.3rem + .6vw) !important;
+}
+
+.navegador {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  /* ----------- */
+  margin-right: 1rem!important;
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+  /* ----------- */
+  --bs-nav-pills-border-radius: var(--bs-border-radius);
+  /* ----------- */
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+}
+
+.navegador .navegador-item .navegador-link {
+  color: var(--primary) !important;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  border-radius: var(--bs-nav-pills-border-radius);
+}
+
+.navegador .navegador-item .navegador-link.active { 
+  color: var(--white) !important;
+  background-color: var(--primary) !important;
+}
+
+#myCarousel {
+  margin-bottom: 4rem;
 }
 
 .carousel-item {
   z-index: -1;
+  height: 32rem;
 }
 
-#tarjetasDetalles {
-  /* background-color: var(--secondary); */
-  background: linear-gradient(8deg, var(--primary), var(--lightbody));
-  margin: 5rem 8rem;
-}
-
-.bloque-negro {
+.carousel-item .bloque-negro {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 45%;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item .bd-placeholder-img {
+  font-size: 1.125rem !important;
+  text-anchor: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
+
+.carousel-item .carousel-caption {
+  bottom: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-item .carousel-caption .text-shadow {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-item .btn-carousel {
+  background-color: var(--primary);
+  border-color: var(--lightbody);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+#contenedor-tarjetas {
+  background: linear-gradient(8deg, var(--primary), var(--lightbody));
+  margin: 5rem 1rem;
+  width: auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grilla-tarjetas {
+  justify-content: space-evenly;
+  max-width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+}
+
+.columna-tarjeta { 
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  width: 25rem;
+  min-height: 1px;
+  height: 30rem;
+}
+
+.tarjeta-detalle {
+  border: none;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: url(img/feature_suavidad.jpg);
+}
+
+.tarjeta-detalle .textoDetalle {
+  margin-bottom: -80%;
+}
+
+.tarjeta-detalle:hover .textoDetalle {
+  
 }
 
 .circular-image {
@@ -50,7 +197,50 @@
   margin: 10px 20px 10px 0; /* Márgenes para separar el texto de la imagen */
 }
 
+.navegador-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  /* ----------- */
+  margin-right: 1rem!important;
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+  /* ----------- */
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: var(--undergray);
+  /* ----------- */
+  --bs-nav-pills-border-radius: var(--bs-border-radius);
+  --bs-nav-pills-link-active-color: var(--primary) !important;
+  --bs-nav-pills-link-active-bg: var(--white) !important;
+}
+
+.navegador-footer .navegador-item .navegador-link {
+  color: var(--undergray) !important;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  border-radius: var(--bs-nav-pills-border-radius);
+}
+
+.navegador-footer .navegador-item .navegador-link.active {
+  color: var(--primary) !important;
+}
+
 /* ---------------------------------------------- ESTILOS PERSONALIZADOS (productos) ----------------------------------------------- */
+
+#producto-item h2 {
+  letter-spacing: -.05rem;
+}
 
 .marco-disponible {
   border: 1rem solid transparent;
@@ -70,175 +260,38 @@
   background-origin: border-box;
 }
 
-/* ----------------------------------------------- ESTILOS INCLUIDOS DE BOOTSTRAP --------------------------------------------------- */
-
-.nav-link {
-  color: var(--primary) !important;
-}
-
-.nav-link.active { 
-  color: var(--white) !important;
-  background-color: var(--primary) !important;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem !important;
-  text-anchor: middle !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  user-select: none !important;
-}
-
-.b-example-divider {
-  width: 100% !important;
-  height: 3rem !important;
-  background-color: rgba(0, 0, 0, .1) !important;
-  border: solid rgba(0, 0, 0, .15) !important;
-  border-width: 1px 0 !important;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15) !important;
-}
-
-.b-example-vr {
-  flex-shrink: 0 !important;
-  width: 1.5rem !important;
-  height: 100vh !important;
-}
-
-.bi {
-  vertical-align: -.125em !important;
-  fill: currentColor !important;
-}
-
-.nav-scroller {
-  position: relative !important;
-  z-index: 2 !important;
-  height: 2.75rem !important;
-  overflow-y: hidden !important;
-}
-
-.nav-scroller .nav {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  padding-bottom: 1rem !important;
-  margin-top: -1px !important;
-  overflow-x: auto !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-.btn-bd-primary {
-  --bd-violet-bg: #712cf9 !important;
-  --bd-violet-rgb: 112.520718, 44.062154, 249.437846 !important;
-
-  --bs-btn-font-weight: 600 !important;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
-}
-
-.bd-mode-toggle {
-  z-index: 1500 !important;
-}
-
-/* ----- Estilos para la sombra con degradado ------ */
-
-.text-shadow {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-}
-
-.box-shadow {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-
-.shadow-with-gradient {
-  position: relative;
-  overflow: hidden;
-}
-
-.shadow-with-gradient::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 250px; /* Altura del degradado, ajusta según tus necesidades */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* ------------------------------------------------- */
-
-/* GLOBAL STYLES
-/* Padding below the footer and lighter body text */
-
-body {
-  /* padding-top: 3rem; */
-  /* padding-bottom: 3rem; */
-  color: rgb(var(--bs-tertiary-color-rgb));
-}
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  margin-bottom: 4rem;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-}
-
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  letter-spacing: -.05rem;
-}
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 3.5rem !important;
+/* Pantallas pequeñas (móviles): Consultas para pantallas con un ancho menor a 576 píxeles. */
+@media (max-width: 575px) {
+
+  #encabezado {
+    justify-content: center;
   }
+
+  #encabezado .encabezado-marca {
+    margin-left: -1.5rem;
+  }
+
+  #encabezado .encabezado-marca img {
+    height: 3rem;
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
 }
+
+/* Tabletas y pantallas medianas: Consultas para pantallas con un ancho entre 576 y 991 píxeles. */
+@media (min-width: 576px) and (max-width: 991px) {
+
+}
+
+/* Pantallas grandes (escritorio): Consultas para pantallas con un ancho igual o superior a 992 píxeles. */
+@media (min-width: 992px) {
+
+}
+
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
