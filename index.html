@@ -6,22 +6,40 @@
     <title>Inicio · CrezcoSiendo</title>
     <link rel="website icon" type="png" href="img/logo_marca.png">
     <link rel="stylesheet" href="index.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Autour+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="">
-        <header id="encabezado" class="d-flex flex-wrap justify-content-center py-3">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
-                <span class="tituloEncabezado fs-3 fw-semibold">CREZCOSIENDO</span>
+        <!-- =========================== ENCABEZADO =========================== -->
+
+        <header id="encabezado">
+            <a href="/" class="encabezado-marca">
+                <img src="/img/logo_marca.png" alt="Logo Crezcosiendo">
+                <span class="encabezado-titulo">CREZCOSIENDO</span>
             </a>
-            <ul class="nav nav-pills my-auto me-3">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Inicio</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link">Productos</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+            <ul class="navegador">
+                <li class="navegador-item"><a href="#" class="navegador-link active" aria-current="page">Inicio</a></li>
+                <li class="navegador-item"><a href="products.html" class="navegador-link">Productos</a></li>
+                <li class="navegador-item"><a href="contact.html" class="navegador-link">Contacto</a></li>
             </ul>
         </header>
+
+        <!-- =========================== CARRUSEL =========================== -->
 
         <main>
             <div id="myCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
@@ -51,7 +69,7 @@
                             <div class="carousel-caption text-start">
                                 <h1 class="text-shadow">Productos</h1>
                                 <p class="text-shadow">Revisa nuestro catalogo de productos seleccionados.</p>
-                                <p><a class="btn btn-lg btn-primary box-shadow" href="products.html">Acceder</a></p>
+                                <p><a class="btn-carousel btn btn-lg btn-primary" href="products.html">Acceder</a></p>
                             </div>
                         </div>
                     </div>
@@ -63,7 +81,7 @@
                             <div class="carousel-caption">
                                 <h1 class="text-shadow">Batas de baño</h1>
                                 <p class="text-shadow">Cómodas y ajustables batas de toalla, <span class="fw-bold">confeccionadas a pedido</span>.</p>
-                                <p><a class="btn btn-lg btn-primary box-shadow" href="contact.html">Realizar pedido</a></p>
+                                <p><a class="btn-carousel btn btn-lg btn-primary" href="contact.html">Realizar pedido</a></p>
                             </div>
                         </div>
                     </div>
@@ -75,7 +93,7 @@
                             <div class="carousel-caption text-end">
                                 <h1 class="text-shadow">Reacondicionamiento de ropa</h1>
                                 <p class="text-shadow">Trabajos de reformas especializados acorde a la indumentaria del cliente.</p>
-                                <p><a class="btn btn-lg btn-primary box-shadow" href="contact.html">Contactar</a></p>
+                                <p><a class="btn-carousel btn btn-lg btn-primary" href="contact.html">Contactar</a></p>
                             </div>
                         </div>
                     </div>
@@ -83,38 +101,41 @@
 
             </div>
 
+            <!-- =========================== TARJETAS =========================== -->
 
-            <!-- ================================================== -->
-
-            <div id="tarjetasDetalles" class="p-4 rounded-4 shadow">
-                <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4" style="height: 500px;">
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-with-gradient" style="background-image: url(img/feature_suavidad.jpg);">
-                            <div class="d-flex flex-column-reverse h-100 p-5 text-white">
+            <div id="contenedor-tarjetas">
+                <div class="grilla-tarjetas">
+                    
+                    <div class="columna-tarjeta">
+                        <div class="tarjeta-detalle" style="background-image: url(img/feature_suavidad.jpg);">
+                            <div class="texto-detalle d-flex flex-column-reverse h-100 p-5 text-white">
                                 <h3 class="text-center display-6 lh-1 fw-semibold" style="z-index: 2;">Textura ultrasuave</h3>
                             </div>
                         </div>
                     </div>
               
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-with-gradient" style="background-image: url(img/feature_absorbente.jpg);">
-                            <div class="d-flex flex-column-reverse h-100 p-5 text-white">
+                    <div class="columna-tarjeta">
+                        <div class="tarjeta-detalle" style="background-image: url(img/feature_absorbente.jpg);">
+                            <div class="texto-detalle d-flex flex-column-reverse h-100 p-5 text-white">
                                 <h3 class="text-center display-6 lh-1 fw-semibold" style="z-index: 2;">Absorción superior</h3>
                             </div>
                         </div>
                     </div>
               
-                    <div class="col">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-with-gradient" style="background-image: url(img/feature_durabilidad.jpg);">
-                            <div class="d-flex flex-column-reverse h-100 p-5 text-white">
+                    <div class="columna-tarjeta">
+                        <div class="tarjeta-detalle" style="background-image: url(img/feature_durabilidad.jpg);">
+                            <div class="texto-detalle d-flex flex-column-reverse h-100 p-5 text-white">
                                 <h3 class="text-center display-6 lh-1 fw-semibold" style="z-index: 2;">Materiales resistentes</h3>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
 
             <hr class="featurette-divider">
+
+            <!-- =========================== INFO =========================== -->
 
             <div class="container mb-5 py-5">
                 <div class="row justify-content-between fs-5">
@@ -147,13 +168,15 @@
             
         </main>
 
+        <!-- =========================== PIE DE PAGINA =========================== -->
+
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary" id="copy"></p>
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Inicio</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link px-2 text-body-secondary">Productos</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-body-secondary">Contacto</a></li>
+            <ul class="navegador-footer col-md-4 justify-content-end">
+                <li class="navegador-item"><a href="#" class="navegador-link active px-2">Inicio</a></li>
+                <li class="navegador-item"><a href="products.html" class="navegador-link px-2">Productos</a></li>
+                <li class="navegador-item"><a href="contact.html" class="navegador-link px-2">Contacto</a></li>
                 <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
             </ul>
         </footer>
