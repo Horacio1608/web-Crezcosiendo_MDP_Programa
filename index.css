@@ -1,148 +1,27 @@
 :root {
-  --primary: rgb(235,53,102) !important; /* Cambia el color principal */
-  --secondary: rgb(244,114,100);/* Cambia el color secundario */
+  --primary: rgb(235,53,102) !important;
+  --secondary: rgb(244,114,100);
   --terciary: rgb(251,184,43);
   --lightbody: rgb(255,245,158);
   --lightbodyOp: rgba(255,245,158,0.5);
   --backbody: rgb(255,172,50);
-  --success: #28a745; /* Cambia el color de éxito */
+  --success: #28a745;
   --undergray: #6c757d;
   --white: #fff;
-  /* ... y así sucesivamente para las demás variables de colores */
 }
 
-/* ---------------------------------------------------------------------- */
+/* Linea divisora
+------------------------- */
 
-#encabezado {
-  background: linear-gradient(8deg, var(--primary), var(--lightbody));
+.featurette-divider {
+  margin: 4rem 0; /* Space out the Bootstrap <hr> more */
 }
 
-.tituloEncabezado {
-  color: var(--white);
+/* ------------------------- */
+
+* {
+  font-family: 'Nunito', sans-serif;
 }
-
-#tarjetasDetalles {
-  background-color: var(--secondary);
-  margin: 5rem 8rem;
-}
-
-.circular-image {
-  border-radius: 40%; /* Hace que la imagen sea circular */
-  width: 150px; /* Ancho de la imagen */
-  height: 150px; /* Altura de la imagen */
-  float: left; /* Hace que la imagen se alinee a la izquierda */
-  margin: 10px 20px 10px 0; /* Márgenes para separar el texto de la imagen */
-}
-
-/* ---------------------------------------------------------------------- */
-
-.nav-link {
-  color: var(--primary) !important;
-}
-
-.nav-link.active { 
-  color: var(--white) !important;
-  background-color: var(--primary) !important;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem !important;
-  text-anchor: middle !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  user-select: none !important;
-}
-
-.b-example-divider {
-  width: 100% !important;
-  height: 3rem !important;
-  background-color: rgba(0, 0, 0, .1) !important;
-  border: solid rgba(0, 0, 0, .15) !important;
-  border-width: 1px 0 !important;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15) !important;
-}
-
-.b-example-vr {
-  flex-shrink: 0 !important;
-  width: 1.5rem !important;
-  height: 100vh !important;
-}
-
-.bi {
-  vertical-align: -.125em !important;
-  fill: currentColor !important;
-}
-
-.nav-scroller {
-  position: relative !important;
-  z-index: 2 !important;
-  height: 2.75rem !important;
-  overflow-y: hidden !important;
-}
-
-.nav-scroller .nav {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  padding-bottom: 1rem !important;
-  margin-top: -1px !important;
-  overflow-x: auto !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-  -webkit-overflow-scrolling: touch !important;
-}
-
-.btn-bd-primary {
-  --bd-violet-bg: #712cf9 !important;
-  --bd-violet-rgb: 112.520718, 44.062154, 249.437846 !important;
-
-  --bs-btn-font-weight: 600 !important;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
-}
-
-.bd-mode-toggle {
-  z-index: 1500 !important;
-}
-
-/* Estilos para la sombra con degradado */
-
-.text-shadow {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-}
-
-.box-shadow {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-
-.shadow-with-gradient {
-  position: relative;
-  overflow: hidden;
-}
-
-.shadow-with-gradient::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 250px; /* Altura del degradado, ajusta según tus necesidades */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* ---------------------------------------------------------------------- */
-
-/* GLOBAL STYLES
-/* Padding below the footer and lighter body text */
 
 body {
   /* padding-top: 3rem; */
@@ -150,59 +29,533 @@ body {
   color: rgb(var(--bs-tertiary-color-rgb));
 }
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+.tituloEncabezado, h1, h2, h3 {
+  font-family: 'Comfortaa', sans-serif;
+}
 
-/* Carousel base class */
-.carousel {
+/* ------------------------------------------ ESTILOS PERSONALIZADOS (index) ----------------------------------------------------- */
+
+#encabezado {
+  background: linear-gradient(8deg, var(--primary), var(--lightbody));
+  box-shadow: 0 0 15px #000;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#encabezado .encabezado-marca {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0; /* El valor puede variar según tus necesidades en pantalla md */
+  text-decoration: none;
+}
+
+#encabezado .encabezado-marca img {
+  height: 3rem;
+  margin: 0 1rem;
+}
+
+#encabezado .encabezado-marca .encabezado-titulo {
+  color: var(--white);
+  font-weight: 600 !important;
+  font-size: calc(1.3rem + .6vw) !important;
+}
+
+.navegador {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  /* ----------- */
+  margin-right: 1rem!important;
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+  /* ----------- */
+  --bs-nav-pills-border-radius: var(--bs-border-radius);
+  /* ----------- */
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+}
+
+.navegador .navegador-item .navegador-link {
+  color: var(--primary) !important;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  border-radius: var(--bs-nav-pills-border-radius);
+}
+
+.navegador .navegador-item .navegador-link.active { 
+  color: var(--white) !important;
+  background-color: var(--primary) !important;
+}
+
+.navegador .boton-navegador-carrito {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding: var(--bs-nav-link-padding-y) 12px;
+  margin: 0 10px;
+}
+
+.navegador .boton-navegador-carrito:hover {
+  background-color: var(--white);
+  color: var(--primary);
+  transition: 0.3s;
+}
+
+#myCarousel {
   margin-bottom: 4rem;
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+
+.carousel-control-next, .carousel-control-prev {
+  width: 10% !important;
 }
 
-/* Declare heights because of positioning of img element */
 .carousel-item {
+  z-index: -1;
   height: 32rem;
 }
 
+.carousel-item .capa-oscura {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-/* MARKETING CONTENT
--------------------------------------------------- */
+.carousel-item .bd-placeholder-img {
+  font-size: 1.125rem !important;
+  text-anchor: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
+.carousel-item .carousel-caption {
+  bottom: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-item .carousel-caption .text-shadow {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.carousel-item .btn-carousel {
+  background-color: var(--primary);
+  border-color: var(--lightbody);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.contenedor-caja {
   text-align: center;
 }
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+
+.caja-tarjetas {
+  background: linear-gradient(8deg, var(--primary), var(--lightbody));
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  max-width: 100%;
 }
 
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+.grilla-tarjetas {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
+.columna-tarjeta { 
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  width: 25rem;
+  min-height: 1px;
+  height: 30rem;
+}
+
+.tarjeta-detalle {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--white);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+.tarjeta-detalle .texto-detalle {
+  position: relative;
+  bottom: -20rem;
+  padding: 3rem!important;
+}
+
+.tarjeta-detalle .texto-detalle > p {
+  margin-top: 35px;
+  font-size: 1.20rem !important;  
+  text-align: center;
+}
+
+.tarjeta-detalle:hover .texto-detalle {
+  position: relative;
+  bottom: -2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  transition: 2s;
+}
+
+.info-texto {
+  user-select: none;
+}
+
+.footer-navegador {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  /* ----------- */
+  margin-right: 1rem!important;
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+  /* ----------- */
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: var(--undergray);
+  /* ----------- */
+  --bs-nav-pills-border-radius: var(--bs-border-radius);
+  --bs-nav-pills-link-active-color: var(--primary) !important;
+  --bs-nav-pills-link-active-bg: var(--white) !important;
+}
+
+.footer-navegador .navegador-item .navegador-link {
+  color: var(--undergray) !important;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  border-radius: var(--bs-nav-pills-border-radius);
+}
+
+.footer-navegador .navegador-item .navegador-link.active {
+  color: var(--primary) !important;
+}
+
+.footer-logo {
+  height: 3rem !important; 
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+/* ---------------------------------------------- ESTILOS PERSONALIZADOS (productos) ----------------------------------------------- */
+
+.main-productos {
+  padding: 0 3rem;
+  margin: 3rem 3rem;
+}
+
+#producto-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+  margin: 0 0;
+}
+
+.producto-caja-info {
+  width: 70%;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+.titulo-item {
   letter-spacing: -.05rem;
+}
+
+.producto-caja-vista {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.producto-vista {
+  position: relative;
+}
+
+.marco-disponible {
+  border: 1rem solid transparent;
+  background: linear-gradient(white, white),
+  url(/img/back_1_clip.jpg);
+  background-clip: padding-box, border-box;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+.marco-no-disponible {
+  border: 1rem solid transparent;
+  background: linear-gradient(white, white),
+  url(/img/back_0_clip.jpg);
+  background-clip: padding-box, border-box;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+.producto-botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  top: -7%;
+}
+
+.boton-producto {
+  background-color: var(--terciary);
+  color: var(--primary);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+}
+
+.boton-producto:hover {
+  background-color: darkred;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.boton-producto-ver {
+  position: relative;
+  padding: 12px 30px;
+}
+
+.boton-producto-carrito {
+  position: relative;
+  padding: 12px 15px;
+}
+
+.boton-no-disponible {
+  background-color: #6c757d;
+  color: var(--white);
+}
+
+.boton-no-disponible:hover {
+  background-color: #53575a;
 }
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-      font-size: 3.5rem !important;
+/* Pantallas pequeñas (móviles): Consultas para pantallas con un ancho menor a 576 píxeles. */
+@media (max-width: 575px) {
+
+  /* header */
+
+  #encabezado {
+    justify-content: center;
+    gap: 0.5rem;
   }
+
+  #encabezado .encabezado-marca {
+    margin-left: -1.5rem;
+  }
+
+  #encabezado .encabezado-marca img {
+    height: 3rem;
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  #encabezado .navegador {
+    margin-right: 0 !important;
+  }
+
+  /* index */
+
+  .caja-tarjetas {
+    margin: 0 1rem !important;
+    padding: 2rem 0 !important;
+  }
+
+  .grilla-tarjetas {
+    gap: 0.25;
+  }
+
+  .columna-tarjeta { 
+    width: 90%
+  }
+
+  .tarjeta-detalle .texto-detalle {
+    bottom: -23.5rem;
+    padding: 1rem!important;
+  }
+
+  .tarjeta-detalle .texto-detalle > p {
+    margin-top: 40px;
+    font-size: 1.20rem !important;  
+  }
+
+  .info-logo {
+    padding: 5rem;
+  }
+
+  /* productos */
+
+  .main-productos {
+    padding: 0;
+    margin: 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  #producto-item {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .producto-caja-info {
+    width: 100%;
+  }
+
+  .producto-caja-vista {
+    width: 100%;
+  }
+
+  .producto-botones {
+    gap: 15px;
+  }
+
+  .boton-producto {
+    font-size: 22.5px;
+  }
+  
+  .boton-producto-ver {
+    padding: 15px 35px;
+  }
+  
+  .boton-producto-carrito {
+    padding: 15px 20px;
+  }
+
+  /* footer */
+
+  .footer-crezcosiendo {
+    gap: 1.25rem;
+  }
+
+  .footer-navegador {
+    margin-left: 3rem;
+    margin-right: 0rem !important;
+  }
+
+  .footer-logo {
+    height: 3rem !important; 
+    margin-right: 0rem !important;
+  }
+
 }
+
+/* Tabletas y pantallas medianas: Consultas para pantallas con un ancho entre 576 y 991 píxeles. */
+@media (min-width: 576px) and (max-width: 991px) {
+
+  /* index */
+
+  .caja-tarjetas {
+    margin: 0 2rem;
+  }
+
+  .tarjeta-detalle .texto-detalle {
+    bottom: -21rem;
+  }
+
+  .tarjeta-detalle .texto-detalle > p {
+    margin-top: 45px;
+    font-size: 1.20rem !important;  
+  }
+
+  .info-logo {
+    padding: 5rem;
+  }
+
+  /* productos */
+
+  #producto-item {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .producto-caja-info {
+    width: 100%;
+  }
+
+  .producto-caja-vista {
+    width: 100%;
+  }
+
+  .producto-botones {
+    gap: 30px;
+    top: -7%;
+  }
+  
+  .boton-producto {
+    font-size: 30px;
+  }
+  
+  .boton-producto-ver {
+    padding: 17.5px 37.5px;
+  }
+  
+  .boton-producto-carrito {
+    padding: 17.5px 22.5px;
+  }
+
+  .texto-item {
+    font-size: 25px !important;
+  }
+
+  /* footer */
+
+  .footer-logo {
+    height: 3rem !important; 
+    margin-right: 0rem !important;
+  }
+
+}
+
+/* Pantallas grandes (escritorio): Consultas para pantallas con un ancho igual o superior a 992 píxeles. */
+@media (min-width: 992px) {
+
+  
+  
+}
+
+/* -------------- Responsive bootstrap --------------- */
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */

@@ -6,25 +6,39 @@
     <title>Contacto · CrezcoSiendo</title>
     <link rel="website icon" type="png" href="/img/logo_marca.png">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuentes de Google : Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <!-- Fuentes de Google : Comfortaa -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="">
-        <header id="encabezado" class="d-flex flex-wrap justify-content-center py-3">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
-                <span class="tituloEncabezado fs-3 fw-semibold">CREZCOSIENDO</span>
+
+        <!-- =========================== ENCABEZADO =========================== -->
+
+        <header id="encabezado">
+            <a href="/" class="encabezado-marca">
+                <img src="/img/logo_marca.png" alt="Logo Crezcosiendo">
+                <span class="encabezado-titulo">CREZCOSIENDO</span>
             </a>
-            <ul class="nav nav-pills my-auto me-3">
-                <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Inicio</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link">Productos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link active">Contacto</a></li>
+            <ul class="navegador">
+                <li class="navegador-item"><a href="index.html" class="navegador-link">Inicio</a></li>
+                <li class="navegador-item"><a href="products.html" class="navegador-link">Productos</a></li>
+                <li class="navegador-item"><a href="#" class="navegador-link active" aria-current="page">Contacto</a></li>
+                <button class="boton-navegador-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
             </ul>
         </header>
 
-        <main>
+        <main class="main-contacto">
             
+            <!-- =========================== CONTACTO =========================== -->
             <div class="container my-5">
                 <form id="formulario">
                     <div class="form-group">
@@ -55,14 +69,16 @@
 
         </main>
 
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 px-4 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary" id="copy"></p>
+        <!-- =========================== PIE DE PAGINA =========================== -->
 
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-primary">Inicio</a></li>
-                <li class="nav-item"><a href="products.html" class="nav-link px-2 text-body-secondary">Productos</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-body-secondary">Contacto</a></li>
-                <img src="/img/logo_marca.png" style="height: 3rem;" class="mx-3" alt="">
+        <footer class="footer-crezcosiendo d-flex flex-wrap justify-content-between align-items-center py-3 px-4 my-4 border-top">
+            <p class="footer-info col-md-5 mb-0 text-body-secondary" id="copy"></p>
+
+            <ul class="footer-navegador col-md-4 justify-content-end">
+                <li class="navegador-item"><a href="#" class="navegador-link active px-2">Inicio</a></li>
+                <li class="navegador-item"><a href="products.html" class="navegador-link px-2">Productos</a></li>
+                <li class="navegador-item"><a href="contact.html" class="navegador-link px-2">Contacto</a></li>
+                <img src="/img/logo_marca.png" class="footer-logo" alt="Logo Crezcosiendo">
             </ul>
         </footer>
     </div>
