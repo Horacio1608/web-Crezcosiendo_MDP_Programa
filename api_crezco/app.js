@@ -1,42 +1,23 @@
 const express = require('express');
 const app = express();
 
-
+//
 const contactRouter = require('./routers/contact.routers.js');
+const productsRouter = require('./routers/products.routers.js');
+const adminRouter = require('./routers/admin.routers.js');
 
 const PORT = process.env.PORT || 3500;
 
 //rutas principales
 
-app.get('/',(req,res)=>{
-  res.send('homer');
-});
-
 //rutas de productos
-app.get('/products',(req,res)=>{
-  res.send('products');
-});
+app.use('/products', productsRouter);
 
 //rutas de contacto
 app.use('/contact', contactRouter);
 
 //rutas del admin
-app.post('/admin',(req,res)=>{
-  res.send('crea productos el admin');
-});
-
-app.put('/admin',(req,res)=>{
-  res.send('modifica productos el admin');
-});
-
-app.get('/admin',(req,res)=>{
-  res.send('consulta productos el admin');
-});
-
-app.delete('/admin',(req,res)=>{
-  res.send('borra productos el admin');
-});
-
+app.use('/admin', adminRouter);
 
 
 app.listen(PORT, () => {
