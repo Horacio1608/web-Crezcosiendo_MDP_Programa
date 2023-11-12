@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      order.belongsTo(models.product, { foreignKey: 'id' })
+      //order.BelongsToMany(models.product, { foreignKey: 'id' })
     }
   }
   order.init({
     clientname: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.INTEGER,
+    detail: DataTypes.INTEGER,
     pending: DataTypes.BOOLEAN,
     idproduct: DataTypes.INTEGER
   }, {
@@ -27,10 +28,10 @@ module.exports = (sequelize, DataTypes) => {
    
   //asocio las tablas de order con product
   
-  //User.asociate = function(models) {
-   // order.belongsTo(models.product);
-  //}
-  
+  //order.BelongsToMany(models.product, { foreignKey: 'id' })
+  order.associate = function(models){
+    order.belongsToMany(models.product);
+  }
 
   //return order;
   

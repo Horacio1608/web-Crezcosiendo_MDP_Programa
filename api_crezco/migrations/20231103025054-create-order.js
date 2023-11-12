@@ -18,6 +18,9 @@ module.exports = {
       phone: {
         type: Sequelize.INTEGER
       },
+      detail: {
+        type: Sequelize.TEXT
+      },
       pending: {
         type: Sequelize.BOOLEAN
       },

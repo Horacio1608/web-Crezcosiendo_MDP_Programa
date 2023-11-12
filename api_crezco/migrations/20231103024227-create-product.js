@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      nameproduct: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -38,7 +38,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       deletAt: {
-        defaultValue:0,
+        allowNull: false,
         type: Sequelize.DATE
       }
     });
