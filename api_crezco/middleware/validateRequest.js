@@ -1,4 +1,4 @@
-const validateRequest =(req,res,next,schema)=>{
+const validateRequest =(req,resp,next,schema)=>{
     const options ={
         stripUnknown:true,
         abortEarly:false,
@@ -6,13 +6,19 @@ const validateRequest =(req,res,next,schema)=>{
     }
     const {error,value} = schema.validate(req.body,options);
     if(error){
-        const message = error.details.map(x=>x.message).join(', ');
-        res.status(400).json(message);
+        console.log(error.details)
+        const message = error.details.map((elements)=>{
+            let error = { label : elements.context.label,
+                          message:elements.message}
+            return error;
+        });
+        resp.status(400).json({error:true,message});
     }
     else{
-        req.body =value;
-        next()
+        req.body = value;
+        next();
     }
+
 }
 
 module.exports = validateRequest;

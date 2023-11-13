@@ -3,22 +3,16 @@
 const Joi = require('joi');
 const validateRequest = require('../middleware/validateRequest');
 
-const validateProduct = (req, resp, next) => {
+const validateProduct = (req, res, next) => {
     const schema = Joi.object({
-        name: Joi.string().required(),
-        description: Joi.string().required(),
-        price: Joi.number().precision(2).required(),
-        available: Joi.boolean(),
-        image: Joi.string().uri(),
+        nameproduct: Joi.string().required().message({
+           // 'string.empty': 'Complete el nombre del Producto',
+           // 'any.required': 'Ingrese el Nombre del Producto',
+        }),
+        // Agrega aquí los otros campos que necesitas validar
     });
 
-    validateRequest(req, resp, (error) => {
-        if (error) {
-            resp.status(400).json(error);
-        } else {
-            next();
-        }
-    }, schema);
+    validateRequest(req, res,next, schema)
 }
 
 module.exports = validateProduct;
