@@ -1,7 +1,8 @@
-const validateRequest =(req,resp,next,schema)=>{
+
+const validateRequest = (req,resp,next,schema) =>{
     const options ={
         stripUnknown:true,
-        abortEarly:false,
+        abortEarly:false, 
         allowUnknown:true
     }
     const {error,value} = schema.validate(req.body,options);
@@ -20,5 +21,4 @@ const validateRequest =(req,resp,next,schema)=>{
     }
 
 }
-
 module.exports = validateRequest;

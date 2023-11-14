@@ -1,11 +1,11 @@
 //Routers para consulta de productos cargados por el admin
 
 const express = require('express');
-const productsRouter = express.Router();
+const router = express.Router();
 const clientProducts = require('../controller/products.controller');
 
 
-productsRouter.get('/',clientProducts);//obtengo productos
+router.get('/',clientProducts);//obtengo productos
 
 
-module.exports = productsRouter;
+module.exports = router;

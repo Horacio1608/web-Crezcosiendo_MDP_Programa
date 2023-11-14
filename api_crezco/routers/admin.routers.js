@@ -1,16 +1,16 @@
 //Routers para uso exclusivo del administrador
 
 const express = require('express');
-const adminRouters = express.Router();
+const router = express.Router();
 const {allProducts,createProducts,deleteProducts,updateProducts} = require('../controller/admin.controller');
-const validateProduct = require('../request/product.request');
+const valProduct = require('../validators/productValidators');
 
-adminRouters.post('/', validateProduct, createProducts);//crea productos el admin
+router.post('/',valProduct, createProducts,);//crea productos el admin 
 
-adminRouters.put('/',updateProducts);//modifica productos el admin
+router.put('/',updateProducts);//modifica productos el admin
   
-adminRouters.get('/',allProducts);//consulta productos el admin
+router.get('/',allProducts);//consulta productos el admin
   
-adminRouters.delete('/',deleteProducts);//borra productos el admin
+router.delete('/',deleteProducts);//borra productos el admin
 
-module.exports = adminRouters;
+module.exports = router;

@@ -1,12 +1,12 @@
 //Routers para la carga de contactos
 
 const express = require('express');
-const contactRouter = express.Router();
+const router = express.Router();
 
 
-contactRouter.get('/',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send('contacto');
   });
 
-module.exports = contactRouter;
+module.exports = router;
 
