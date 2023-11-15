@@ -1,15 +1,23 @@
 const { check } = require('express-validator');
-const { validateResult } = require('../helper/validateHelper');
+const { validateResult } = require('../helper/validateHelper.js');
 
 const valProduct = [
     check('nameproduct')
-    .exists().withMessage('El nombre es requerido')
-    .not().isEmpty().withMessage('LLene el nombre del producto')
-    .isAlphanumeric().withMessage('Nombre alfanumerico'),
-    check('description').exists().not().isEmpty().withMessage('Descripcion es requerida'),
-    check('price').exists().not().isEmpty().isNumeric().withMessage('Price is required and must be a numeric value'),
-    check('available').exists().withMessage('Available is required'),
-    check('image').exists().not().isEmpty().withMessage('Image is required and cannot be empty'),
+        .exists().withMessage('El nombre es requerido')
+        .not().isEmpty().withMessage('LLene el nombre del producto')
+        .isAlphanumeric().withMessage('Nombre alfanumerico'),
+    check('description')
+        .exists().withMessage('la descripcion es requerida')
+        .not().isEmpty().withMessage('llene la descripcion'),
+    check('price')
+        .exists().withMessage('El precio es requerido')
+        .not().isEmpty()
+        .isNumeric().withMessage('el precio es numerico con 2 decimales'),
+    check('available')
+        .exists().withMessage('Available is required'),
+    check('image')
+        .exists()
+        .not().isEmpty().withMessage('Imagen requerida'),
     validateResult,
 ];
 

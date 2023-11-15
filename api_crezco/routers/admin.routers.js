@@ -2,15 +2,23 @@
 
 const express = require('express');
 const router = express.Router();
-const {allProducts,createProducts,deleteProducts,updateProducts} = require('../controller/admin.controller');
+const {allProducts,createProducts,deleteProducts,updateProducts,allOrder,createOrder,deleteOrder,updateOrder} = require('../controller/admin.controller');
 const valProduct = require('../validators/productValidators');
+const valOrder = require('../validators/orderValidators');
 
-router.post('/',valProduct, createProducts,);//crea productos el admin 
 
-router.put('/',updateProducts);//modifica productos el admin
-  
-router.get('/',allProducts);//consulta productos el admin
-  
-router.delete('/',deleteProducts);//borra productos el admin
+// Rutas para Productos
+router.post('/products', valProduct, createProducts); // Crea productos el admin
+router.put('/products', updateProducts); // Modifica productos el admin
+router.get('/products', allProducts); // Consulta productos el admin
+router.delete('/products', deleteProducts); // Borra productos el admin
+
+// Rutas para Pedidos
+router.post('/order', valOrder, createOrder); // Crea pedidos el admin
+router.put('/order', updateOrder); // Modifica pedidos el admin
+router.get('/order', allOrder); // Consulta pedidos el admin
+router.delete('/order', deleteOrder); // Borra pedidos el admin
 
 module.exports = router;
+
+
