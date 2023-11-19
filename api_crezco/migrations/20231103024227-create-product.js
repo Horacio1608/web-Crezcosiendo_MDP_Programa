@@ -1,4 +1,7 @@
 'use strict';
+
+const { faTruckField } = require('@fortawesome/free-solid-svg-icons');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -11,7 +14,7 @@ module.exports = {
       },
       nameproduct: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(155)
       },
       description: {
         allowNull: false,
@@ -19,15 +22,19 @@ module.exports = {
       },
       price: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       available: {
-        defaultValue:1,
+        defaultValue: true,
         type: Sequelize.BOOLEAN
       },
       image: {
         allowNull: false,
         type: Sequelize.STRING
+      },
+      isDeleted: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
@@ -37,10 +44,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      deletAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+     
     });
   },
   async down(queryInterface, Sequelize) {

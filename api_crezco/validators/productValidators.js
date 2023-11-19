@@ -8,13 +8,13 @@ const valProduct = [
         .isAlphanumeric().withMessage('Nombre alfanumerico'),
     check('description')
         .exists().withMessage('la descripcion es requerida')
-        .not().isEmpty().withMessage('llene la descripcion'),
+        .not().isEmpty().withMessage('Complete la descripcion'),
     check('price')
         .exists().withMessage('El precio es requerido')
         .not().isEmpty()
         .isNumeric().withMessage('el precio es numerico con 2 decimales'),
     check('available')
-        .exists().withMessage('Available is required'),
+        .exists().withMessage('Disponibilidad es requerida'),
     check('image')
         .exists()
         .not().isEmpty().withMessage('Imagen requerida'),

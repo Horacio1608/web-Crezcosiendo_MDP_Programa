@@ -10,19 +10,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       clientname: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(155),
+        allowNull: false
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(155),
+        allowNull: false
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(15),
+        allowNull: false
       },
       detail: {
         type: Sequelize.TEXT
       },
       pending: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
       },
       idproduct: {
         type: Sequelize.INTEGER,
@@ -30,6 +34,10 @@ module.exports = {
           model: 'products',
           key: 'id'
         }
+      },
+      isDeleted: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
