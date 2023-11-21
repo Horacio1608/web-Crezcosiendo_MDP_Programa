@@ -19,10 +19,10 @@ const valOrder = [
         .not().isEmpty().withMessage('Complete el detalle'),
     check('pending')
         .exists().withMessage('estado es requerido'),
-    check('idproduct')
+    /*check('idproduct')
         .exists()
         .not().isEmpty().withMessage('Producto requerido')
-        .isNumeric().withMessage('id producto es numerico'),
+        .isNumeric().withMessage('id producto es numerico'),*/
     validateResult,
 ];
 

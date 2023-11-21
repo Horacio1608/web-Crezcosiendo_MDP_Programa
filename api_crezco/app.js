@@ -8,8 +8,7 @@ const adminRouter = require('./routers/admin.routers.js');
 
 const PORT = process.env.PORT || 3500;
 
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended:true}));
+
 app.use(express.json());
 //rutas principales
 

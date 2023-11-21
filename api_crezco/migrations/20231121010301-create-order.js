@@ -1,40 +1,28 @@
 'use strict';
-
-const { faTruckField } = require('@fortawesome/free-solid-svg-icons');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('products', {
+    await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nameproduct: {
-        allowNull: false,
-        type: Sequelize.STRING(155)
-      },
-      description: {
-        allowNull: false,
+      clientname: {
         type: Sequelize.STRING
       },
-      price: {
-        allowNull: false,
-        type: Sequelize.FLOAT
+      email: {
+        type: Sequelize.STRING
       },
-      available: {
-        defaultValue: true,
+      phone: {
+        type: Sequelize.INTEGER
+      },
+      detail: {
+        type: Sequelize.STRING
+      },
+      pending: {
         type: Sequelize.BOOLEAN
-      },
-      image: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      isDeleted: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
@@ -44,10 +32,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-     
+      deletedAt: {
+        type: Sequelize.DATE
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('products');
+    await queryInterface.dropTable('Orders');
   }
 };

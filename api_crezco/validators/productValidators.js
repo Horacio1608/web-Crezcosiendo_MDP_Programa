@@ -2,7 +2,7 @@ const { check } = require('express-validator');
 const { validateResult } = require('../helper/validateHelper.js');
 
 const valProduct = [
-    check('nameproduct')
+    check('name')
         .exists().withMessage('El nombre es requerido')
         .not().isEmpty().withMessage('LLene el nombre del producto')
         .isAlphanumeric().withMessage('Nombre alfanumerico'),
