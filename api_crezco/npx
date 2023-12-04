@@ -1,1 +1,74 @@
-
+[
+  {
+    fieldname: 'file',
+    originalname: '1.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567515414g',
+    path: 'public\\products\\1701567515414g',
+    size: 758422
+  },
+  {
+    fieldname: 'file',
+    originalname: '2.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567515547g',
+    path: 'public\\products\\1701567515547g',
+    size: 1258655
+  },
+  {
+    fieldname: 'file',
+    originalname: '3.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567515659g',
+    path: 'public\\products\\1701567515659g',
+    size: 4060724
+  },
+  {
+    fieldname: 'file',
+    originalname: '4.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567516019g',
+    path: 'public\\products\\1701567516019g',
+    size: 3146446
+  }
+]
+[
+  {
+    fieldname: 'file',
+    originalname: '2.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567743372g',
+    path: 'public\\products\\1701567743372g',
+    size: 1258655
+  },
+  {
+    fieldname: 'file',
+    originalname: '3.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567743613g',
+    path: 'public\\products\\1701567743613g',
+    size: 4060724
+  },
+  {
+    fieldname: 'file',
+    originalname: '4.jpg',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    destination: './public/products',
+    filename: '1701567743895g',
+    path: 'public\\products\\1701567743895g',
+    size: 3146446
+  }
+]

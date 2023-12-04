@@ -14,19 +14,10 @@ const allProducts = async(req,res) =>{
     }
 }
 
-/*const createProducts = async(req,res)=>{
-    try{
-        let adminProducts = await db.Producto.create(req.body);
-        res.status(200).json({error:false,message:'Crea los Productos',data:adminProducts});
-    }
-    catch(e){
-        console.log(e);
-        res.status(400).json({error:true,message:e});
-    }
-}*/
 
 //se crea los productos
 const createProducts = async (req, res) => {
+   
     try {
         const { disponible, titulo, precio, descripcion } = req.body;
 
@@ -34,33 +25,38 @@ const createProducts = async (req, res) => {
         if (!req.files || Object.keys(req.files).length === 0) {
             return res.status(400).json({ error: true, message: 'No se subieron imagenes' });
         }
-
+        
         //  imagen1, imagen2, imagen3, imagen4
-        const imagenes = [];
-
+        //const imagenes = [];
+        const imagenes = req.files.map(file => file.path);
+        console.log("Rutas de imágenes:", imagenes)
         for (let i = 1; i <= 4; i++) {
             const field = `imagen${i}`;
+            
             if (req.files[field]) {
                 imagenes.push(req.files[field].path);
+                
             } else {
                 
                 imagenes.push(null);
             }
+         
         }
-
+       
         // push to db
+        
         let adminProducts = await db.Producto.create({
             disponible,
             titulo,
             precio,
-            imagen1: imagenes.imagen1,
-            imagen2: imagenes.imagen2,
-            imagen3: imagenes.imagen3,
-            imagen4: imagenes.imagen4,
+            imagen1: imagenes[0],
+            imagen2: imagenes[1],
+            imagen3: imagenes[2],
+            imagen4: imagenes[3],
             descripcion,
-        });
-
-        res.status(200).json({ error: false, message: 'Crea los Productos', data: adminProducts });
+});
+        
+        res.status(200).json({ error: false, message: 'Producto Creado', data: adminProducts });
     } catch (e) {
         console.log(e);
         res.status(400).json({ error: true, message: e.message || 'Error al crear productos.' });

@@ -8,10 +8,10 @@ const valOrder = require('../validators/orderValidators');
 const multerMiddleware = require('../middleware/upload.middleware');
 
 // Rutas para Productos
-router.post('/products',  multerMiddleware(),(req, res)=>{
-    console.log(req.file);
-    res.send('ok');
-}) //valProduct, createProducts); // Crea productos el admin
+router.post('/products',  multerMiddleware(),valProduct, createProducts);// Crea productos el admin  
+/*(req, res)=>{
+    console.log(req.files);
+    res.send('ok');*/
 router.put('/products/:id', valProduct, updateProducts); // Modifica productos el admin
 router.get('/products', allProducts); // Consulta productos el admin
 router.delete('/products/:id', deleteProducts); // Borra productos el admin

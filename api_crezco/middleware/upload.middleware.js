@@ -8,7 +8,12 @@ const multer = require('multer');
       cb(null, Date.now() + extension);
     }
   });
-  const upload = multer ({storage:storage}).single('file');
+  const upload = multer ({storage,
+  fileFilter: function(_req, file, cb){
+    let type = file.mimetype.startsWith('image/');
+    type?cb(null,true):cb(new Error('Ingrese archivos de imagenes'));
+  }
+  }).array('file', 4);
   return upload;
 }
  
