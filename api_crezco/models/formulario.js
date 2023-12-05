@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Formulario.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    number: DataTypes.INTEGER,
+    name: DataTypes.STRING(125),
+    email: DataTypes.STRING(125),
+    number: DataTypes.INTEGER(20),
     message: DataTypes.STRING
   }, {
     sequelize,

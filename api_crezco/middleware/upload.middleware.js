@@ -4,8 +4,7 @@ const multer = require('multer');
   const storage = multer.diskStorage({
     destination: './public/products',
     filename: function(_req, file , cb){
-      var extension = file.originalname.slice(file.originalname.lastIndexOf(','));
-      cb(null, Date.now() + extension);
+      var extension = Date.now()+'_'+file.originalname;
     }
   });
   const upload = multer ({storage,
