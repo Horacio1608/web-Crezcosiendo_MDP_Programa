@@ -17,9 +17,9 @@ const valOrder = [
     check('message')
         .exists().withMessage('El mensaje es requerido')
         .not().isEmpty().withMessage('Complete el mensaje'),
-    check('pending')
+    /*check('pending')
         .exists().withMessage('estado es requerido'),
-    /*check('idproduct')
+    check('idproduct')
         .exists()
         .not().isEmpty().withMessage('Producto requerido')
         .isNumeric().withMessage('id producto es numerico'),*/

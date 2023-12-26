@@ -2,16 +2,16 @@
 
 const express = require('express');
 const router = express.Router();
-const {allProducts,createProducts,deleteProducts,updateProducts,allOrder,createOrder,deleteOrder,updateOrder} = require('../controller/admin.controller');
+
+const {allProducts,createProducts,deleteProducts,updateProducts,allOrder,createOrder,deleteOrder,updateOrder,updateContact} = require('../controller/admin.controller');
 const valProduct = require('../validators/productValidators');
 const valOrder = require('../validators/orderValidators');
 const multerMiddleware = require('../middleware/upload.middleware');
+const adminMiddleware = require('../middleware/adminMiddleware');
+const getContact = require('../controller/contact.controller')
 
 // Rutas para Productos
-router.post('/products',  multerMiddleware(),valProduct, createProducts);// Crea productos el admin  
-/*(req, res)=>{
-    console.log(req.files);
-    res.send('ok');*/
+router.post('/products', multerMiddleware(), valProduct, createProducts);// Crea productos el admin  
 router.put('/products/:id', valProduct, updateProducts); // Modifica productos el admin
 router.get('/products', allProducts); // Consulta productos el admin
 router.delete('/products/:id', deleteProducts); // Borra productos el admin
@@ -22,6 +22,9 @@ router.put('/order', updateOrder); // Modifica pedidos el admin
 router.get('/order', allOrder); // Consulta pedidos el admin
 router.delete('/order:id', deleteOrder); // Borra pedidos el admin
 
+//Modificar datos de Contacto
+router.put('/contact/:id', updateContact); // Modifica contacto el admin
+router.get('/contact', getContact);//Datos de contacto
 module.exports = router;
 
 

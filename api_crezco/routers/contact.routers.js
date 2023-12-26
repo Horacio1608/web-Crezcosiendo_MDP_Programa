@@ -1,12 +1,14 @@
-//Routers para la carga de contactos
+//Routers para la carga de pedidos
 
 const express = require('express');
 const router = express.Router();
+const valOrder = require('../validators/orderValidators');
+const clientOrder = require('../controller/order.controller');
+
+router.post('/order', valOrder, clientOrder);
 
 
-router.get('/',(req,res)=>{
-    res.send('contacto');
-  });
+  
 
 module.exports = router;
 
