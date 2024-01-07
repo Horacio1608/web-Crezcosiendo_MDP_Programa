@@ -24,7 +24,7 @@ router.delete('/order:id', deleteOrder); // Borra pedidos el admin
 
 //Modificar datos de Contacto
 router.put('/contact/:id', updateContact); // Modifica contacto el admin
-router.get('/contact', getContact);//Datos de contacto
+router.get('/contact/:id', getContact);//Datos de contacto
 module.exports = router;
 
 
