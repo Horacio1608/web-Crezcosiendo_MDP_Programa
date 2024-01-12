@@ -66,7 +66,8 @@ const createProducts = async (req, res) => {
 const deleteProducts = async(req,res)=>{
     try{
         let id = req.params.id;
-        await db.Product.findAll({where:{id:id}}).then(async(Result)=>{
+        console.log(id);
+        await db.Producto.findAll({where:{id:id}}).then(async(Result)=>{
             if(Result.length > 0 ){
                 await db.Producto.destroy({where:{id:id}});
                 res.status(200).json({error:false,message:'Producto eliminado',data:null});
@@ -81,6 +82,7 @@ const deleteProducts = async(req,res)=>{
 }
 //actualiza productos por id
 const updateProducts = async(req,res)=>{
+   
     try{
         let id = req.params.id;
         await db.Producto.update(req.body,{where:{id:id}});
