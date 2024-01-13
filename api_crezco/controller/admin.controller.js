@@ -142,35 +142,24 @@ const updateOrder = async(req,res)=>{
         res.status(400).json({error:true,message:e});
     }
 }
-/*const updateContact = async(req,res)=>{
-    try{
-        let id = req.params.id;
-        await db.Contact.update(req.body,{where:{id:id}});
-        res.status(200).json({error:false,message:'contacto actualizado',data:null});
+
+const updateContact = async (req, res) => {
+    try {
+      let id = req.params.id;
+  
+      // Intentar actualizar la fila
+      const [updatedRowsCount] = await db.Contact.update(req.body, { where: { id: id } });
+  
+      if (updatedRowsCount === 0) {
+        // Si no se actualiza ninguna fila (porque no existe), se envía un mensaje indicando que no se encontró el contacto
+        res.status(404).json({ error: true, message: 'Contacto no encontrado' });
+      } else {
+        // Se actualizó una fila existente
+        res.status(200).json({ error: false, message: 'Contacto actualizado', data: req.body });
+      }
+    } catch (e) {
+      res.status(400).json({ error: true, message: e.message });
     }
-    catch(e){
-        res.status(400).json({error:true,message:e});
-    }
-}
-    */
-    const updateContact = async (req, res) => {
-        try {
-          let id = req.params.id;
-      
-          // Intentar actualizar la fila, si no existe, la crea
-          const [updatedRowsCount] = await db.Contact.update(req.body, { where: { id: id } });
-      
-          if (updatedRowsCount === 0) {
-            // Si no se actualiza ninguna fila (porque no existe), la creamos
-            const createdContact = await db.Contact.create({ ...req.body, id: id });
-            res.status(200).json({ error: false, message: 'Contacto creado', data: createdContact });
-          } else {
-            // Se actualizó una fila existente
-            res.status(200).json({ error: false, message: 'Contacto actualizado', data: req.body });
-          }
-        } catch (e) {
-          res.status(400).json({ error: true, message: e.message });
-        }
-      };
+  };
 
 module.exports = {allProducts,createProducts,deleteProducts,updateProducts,allOrder,createOrder,deleteOrder,updateOrder,updateContact};

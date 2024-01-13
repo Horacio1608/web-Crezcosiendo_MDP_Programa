@@ -8,7 +8,7 @@ const valProduct = require('../validators/productValidators');
 const valOrder = require('../validators/orderValidators');
 const multerMiddleware = require('../middleware/upload.middleware');
 const adminMiddleware = require('../middleware/adminMiddleware');
-const getContact = require('../controller/contact.controller')
+
 
 // Rutas para Productos
 router.post('/products', multerMiddleware(), valProduct, createProducts);// Crea productos el admin  
@@ -24,7 +24,7 @@ router.delete('/order:id', deleteOrder); // Borra pedidos el admin
 
 //Modificar datos de Contacto
 router.put('/contact/:id', updateContact); // Modifica contacto el admin
-router.get('/contact/:id', getContact);//Datos de contacto
+
 module.exports = router;
 
 

@@ -8,6 +8,7 @@ const cors = require('cors');
 const contactRouter = require('./routers/contact.routers.js');
 const productsRouter = require('./routers/products.routers.js');
 const adminRouter = require('./routers/admin.routers.js');
+const getContact = require('./routers/datostienda.routers.js');
 require('dotenv').config();
 const adminMiddleware = require('./middleware/adminMiddleware.js');
 
@@ -30,6 +31,8 @@ app.use('/contact', contactRouter);
 //rutas del admin
 app.use('/admin', adminRouter); //adminMiddleware
 
+//ruta contacto de negocio
+app.use('/datostienda', getContact);
 
 app.listen(PORT, () => {
     console.log(`La aplicación está funcionando en http://localhost:${PORT}`);
