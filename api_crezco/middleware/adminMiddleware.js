@@ -10,10 +10,19 @@ const adminMiddleware = (req, res, next) => {
         if (!usuario || !clave) {
             throw new Error('Usuario y contraseña son requeridos');
         }
-
+/*
         // Verificar las credenciales usando las variables de entorno
         if (usuario === 'admin-crezco' && clave === 'admin-123') {
+            // Usuario autenticado*/
+            
+        // Obtener las credenciales desde las variables de entorno
+        const adminUsername = process.env.ADMIN_USERNAME;
+        const adminPassword = process.env.ADMIN_PASSWORD;
+
+        // Verificar las credenciales
+        if (usuario === adminUsername && clave === adminPassword) {
             // Usuario autenticado
+            
             res.status(200).json({success:true, message:'success'})
             next(); // Llama a next para pasar al siguiente middleware o ruta
         } else {

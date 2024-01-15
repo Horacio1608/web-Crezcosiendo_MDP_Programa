@@ -29,7 +29,7 @@ app.use('/products', productsRouter);
 app.use('/contact', contactRouter);
 
 //rutas del admin
-app.use('/admin', adminRouter); //adminMiddleware
+app.use('/admin',  adminRouter); //adminMiddleware
 
 //ruta contacto de negocio
 app.use('/datostienda', getContact);
