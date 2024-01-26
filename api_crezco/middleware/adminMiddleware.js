@@ -1,30 +1,43 @@
 const express = require('express');
 const router = express.Router();
-require('dotenv').config();
+const jwt = require('jsonwebtoken');
+const keys = require('../settings/keys');
+// Middleware para verificar el token
+const verificarToken = (req, res, next) => {
+    const token = req.headers.authorization.split(' ')[1];
 
+    jwt.verify(token, keys.secretKey, (error, decoded) => {
+        if (error) {
+            return res.status(401).json({ success: false, message: 'Token no válido' });
+        }
+        req.usuario = decoded.usuario;
+        next();
+    });
+};
+
+// Middleware para la autenticación del administrador
 const adminMiddleware = (req, res, next) => {
     const { usuario, clave } = req.body;
-   // console.log(req.body);
 
     try {
         if (!usuario || !clave) {
             throw new Error('Usuario y contraseña son requeridos');
         }
-/*
-        // Verificar las credenciales usando las variables de entorno
-        if (usuario === 'admin-crezco' && clave === 'admin-123') {
-            // Usuario autenticado*/
-            
-        // Obtener las credenciales desde las variables de entorno
+
         const adminUsername = process.env.ADMIN_USERNAME;
         const adminPassword = process.env.ADMIN_PASSWORD;
 
-        // Verificar las credenciales
         if (usuario === adminUsername && clave === adminPassword) {
             // Usuario autenticado
-            
-            res.status(200).json({success:true, message:'success'})
-            next(); // Llama a next para pasar al siguiente middleware o ruta
+
+            // Generar un token
+            const token = jwt.sign({ usuario }, keys.secretKey, { expiresIn: '5h' });
+
+            // Agregar el token al objeto de solicitud (req) para que pueda ser utilizado por otros middlewares o rutas
+            req.token = token;
+
+            // Continuar con la ejecución
+            next();
         } else {
             // Usuario no autenticado
             res.status(401).json({ success: false, message: 'Usuario o contraseña incorrectos' });
@@ -35,4 +48,6 @@ const adminMiddleware = (req, res, next) => {
     }
 };
 
-module.exports = adminMiddleware;
+module.exports = { adminMiddleware, verificarToken };
+
+

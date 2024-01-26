@@ -7,7 +7,7 @@ const validateRequest = (req,resp,next,schema) =>{
     }
     const {error,value} = schema.validate(req.body,options);
     if(error){
-        console.log(error.details)
+        //console.log(error.details)
         const message = error.details.map((elements)=>{
             let error = { label : elements.context.label,
                           message:elements.message}

@@ -29,7 +29,7 @@ const createProducts = async (req, res) => {
         //  imagen1, imagen2, imagen3, imagen4
         //const imagenes = [];
         const imagenes = req.files.map(file => file.path);
-        console.log("Rutas de imágenes:", imagenes)
+        //console.log("Rutas de imágenes:", imagenes)
         for (let i = 1; i <= 4; i++) {
             const field = `imagen${i}`;
             
@@ -58,7 +58,7 @@ const createProducts = async (req, res) => {
         
         res.status(200).json({ error: false, message: 'Producto Creado', data: adminProducts });
     } catch (e) {
-        console.log(e);
+        //console.log(e);
         res.status(400).json({ error: true, message: e.message || 'Error al crear productos.' });
     }
 };
@@ -66,7 +66,7 @@ const createProducts = async (req, res) => {
 const deleteProducts = async(req,res)=>{
     try{
         let id = req.params.id;
-        console.log(id);
+        //console.log(id);
         await db.Producto.findAll({where:{id:id}}).then(async(Result)=>{
             if(Result.length > 0 ){
                 await db.Producto.destroy({where:{id:id}});
@@ -143,19 +143,32 @@ const updateOrder = async(req,res)=>{
     }
 }
 
-const updateContact = async (req, res) => {
+  const updateContact = async (req, res) => {
     try {
       let id = req.params.id;
+      console.log(req.body);
   
-      // Intentar actualizar la fila
-      const [updatedRowsCount] = await db.Contact.update(req.body, { where: { id: id } });
+      // Buscar el contacto con el ID dado
+      const existingContact = await db.Contact.findOne({ where: { id: id } });
   
-      if (updatedRowsCount === 0) {
-        // Si no se actualiza ninguna fila (porque no existe), se envía un mensaje indicando que no se encontró el contacto
-        res.status(404).json({ error: true, message: 'Contacto no encontrado' });
+      if (existingContact) {
+        // Si el contacto existe, actualizar
+        const [updatedRowsCount] = await db.Contact.update(req.body, { where: { id: id } });
+  
+        if (updatedRowsCount === 0) {
+          res.status(500).json({ error: true, message: 'Error al intentar actualizar el contacto' });
+        } else {
+          res.status(200).json({ error: false, message: 'Contacto actualizado', data: req.body });
+        }
       } else {
-        // Se actualizó una fila existente
-        res.status(200).json({ error: false, message: 'Contacto actualizado', data: req.body });
+        // Si el contacto no existe, crear uno nuevo con el ID proporcionado
+        const newContact = await db.Contact.create({ id: id, ...req.body });
+        
+        if (newContact) {
+          res.status(201).json({ error: false, message: 'Contacto creado', data: newContact });
+        } else {
+          res.status(500).json({ error: true, message: 'Error al intentar crear el nuevo contacto' });
+        }
       }
     } catch (e) {
       res.status(400).json({ error: true, message: e.message });

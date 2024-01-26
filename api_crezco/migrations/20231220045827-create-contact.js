@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       telefono: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
       },
       hrInicio: {
         type: Sequelize.TIME

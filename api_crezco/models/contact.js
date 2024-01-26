@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Contact.init({
-    telefono: DataTypes.INTEGER,
+    telefono: DataTypes.STRING,
     hrInicio: DataTypes.TIME,
     hfFinal: DataTypes.TIME,
     direccion: DataTypes.STRING

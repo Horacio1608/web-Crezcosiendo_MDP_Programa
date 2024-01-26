@@ -10,7 +10,7 @@ const productsRouter = require('./routers/products.routers.js');
 const adminRouter = require('./routers/admin.routers.js');
 const getContact = require('./routers/datostienda.routers.js');
 require('dotenv').config();
-const adminMiddleware = require('./middleware/adminMiddleware.js');
+const { adminMiddleware, verificarToken } = require('./middleware/adminMiddleware.js');
 
 
 const PORT = process.env.PORT || 3500;
@@ -29,7 +29,11 @@ app.use('/products', productsRouter);
 app.use('/contact', contactRouter);
 
 //rutas del admin
-app.use('/admin',  adminRouter); //adminMiddleware
+app.post('/adminlogin', adminMiddleware, (req, res) => {
+  //token
+  res.json({ success: true, message: 'success'});//, token: req.token 
+});
+app.use('/admin', adminRouter); //, verificarToken
 
 //ruta contacto de negocio
 app.use('/datostienda', getContact);
