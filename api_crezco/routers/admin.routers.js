@@ -20,7 +20,7 @@ router.delete('/products/:id', deleteProducts); // Borra productos el admin
 router.post('/order', valOrder, createOrder); // Crea pedidos el admin
 router.put('/order', updateOrder); // Modifica pedidos el admin
 router.get('/order', allOrder); // Consulta pedidos el admin
-router.delete('/order:id', deleteOrder); // Borra pedidos el admin
+router.delete('/order/:id', deleteOrder); // Borra pedidos el admin
 
 //Modificar datos de Contacto
 router.put('/contact/:id', updateContact); // Modifica contacto el admin

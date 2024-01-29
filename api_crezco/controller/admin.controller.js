@@ -118,9 +118,10 @@ const createOrder = async(req,res)=>{
 const deleteOrder = async(req,res)=>{
     try{
         let id = req.params.id;
+        
         await db.Formulario.findAll({where:{id:id}}).then(async(Result)=>{
             if(Result.length > 0 ){
-                await db.Orders.destroy({where:{id:id}});
+                await db.Formulario.destroy({where:{id:id}});
                 res.status(200).json({error:false,message:'Pedido eliminado',data:null});
             }else{
                 res.status(404).json({error:true,message:'Id inexistente',data:null});
